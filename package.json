@@ -1,0 +1,14 @@
+{
+  "name": "jp-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Script.js",
+  "scripts": {
+    "start": "node Script.js"
+  },
+  "author": "Raygud",
+  "license": "ISC",
+  "dependencies": {
+    "unofficial-valorant-api": "^1.0.4"
+  }
+}
