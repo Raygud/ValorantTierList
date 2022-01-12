@@ -187,7 +187,16 @@ process.umask = function() { return 0; };
 },{}],2:[function(require,module,exports){
 const ValorantAPI = require("unofficial-valorant-api")
 
+let players = []
+
+
+
+
 const KnownPlayers = [
+    Player = {
+        Name:"Raygud", 
+        Id:"Molly"},
+
     Player = {
         Name:"Raygud", 
         Id:"Molly"},
@@ -198,12 +207,7 @@ const KnownPlayers = [
         
     Player = {
         Name:"Konga", 
-        Id:"1111"},    
-        
-    // Player = {
-    //     Name:"наживка", 
-    //     Id:"RUS"},    
-        
+        Id:"1111"}, 
     Player = {
         Name:"nutson", 
         Id:"9906"},   
@@ -279,7 +283,20 @@ for (let i=0; i<KnownPlayers.length; i++) {
     
     if (mmr.data.name != "undefined" && mmr.data.currenttierpatched && "undefined" || mmr.data.elo && "undefined"){
         
-        console.log(mmr.data.name+" "+mmr.data.currenttierpatched+ " " + mmr.data.elo)
+        players.push({"Name": mmr.data.name,
+"Rank": mmr.data.currenttierpatched,
+"MMR" : mmr.data.elo})
+
+players.sort(function (x, y) {
+    return y.MMR - x.MMR;
+});
+console.table(players)
+if (i == KnownPlayers.length){
+    document.getElementById("List"+i).innerHTML = ("Name" + players[i].Name + " " +"Rank" + players[i].Rank + " " +"MMR" + players[i].MMR) 
+    
+    console.table(players)
+    console.log("Players sorted")
+    }
     }
     else{
         i--
