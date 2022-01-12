@@ -1,7 +1,7 @@
 # ValorantTierList
 
-npm install inside the app terminal
+npm install inside the app terminal to instal dependencies
 
-browserify Script.js -o bundle.js too save and deploy changes made too app.
+browserify Script.js -o bundle.js to save and deploy changes made to app.
 
-saving the app as you would normaly do with a website will NOT deploy changes.
+Saving the app as you would normally do with a website will NOT deploy changes.
